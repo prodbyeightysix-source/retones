@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reTones — Preset Banks, Sound Kits & Samples for Producers</title>
+<meta name="description" content="reTones makes preset banks, sound kits, and sample packs for dark, textured, experimental production. Instant digital download, no subscription.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Payhip Checkout SDK: powers the in-page "Buy Now" buttons below. Checkout opens as an overlay
+     on top of this page — the customer never gets redirected to a separate payhip.de tab. -->
+<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+<noscript>
+  <style>
+    /* If JavaScript doesn't run (e.g. iOS Quick Look preview), show everything immediately
+       instead of leaving scroll-reveal content stuck at opacity:0 */
+    .reveal{opacity:1 !important; transform:none !important;}
+    .mobile-nav{display:none !important;}
+  </style>
+</noscript>
+<style>
+  :root{
+    --bg:#0b0d0e;
+    --bg-panel:#14171a;
+    --bg-raised:#1b1f22;
+    --line:#2a2e30;
+    --line-soft:#202426;
+    --text:#ede9e1;
+    --text-muted:#93968f;
+    --text-dim:#5c605e;
+    --accent:#e8a33d;
+    --accent-dim:#7a5a25;
+    --accent-2:#d4483b;
+    --radius:2px;
+    --maxw:1240px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Oswald', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    margin:0;
+    font-weight:600;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Marquee ---------- */
+  .marquee-bar{
+    background:var(--accent);
+    color:#141414;
+    overflow:hidden;
+    white-space:nowrap;
+    position:relative;
+    height:34px;
+    display:flex;
+    align-items:center;
+  }
+  .marquee-track{
+    display:inline-flex;
+    animation:marquee 18s linear infinite;
+    will-change:transform;
+  }
+  .marquee-track span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    padding:0 32px;
+    text-transform:uppercase;
+  }
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(11,13,14,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+    transition:padding .25s ease;
+  }
+  .nav-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 0;
+    transition:padding .25s ease;
+  }
+  header.shrink .nav-row{padding:13px 0;}
+
+  .logo{
+    font-family:'Oswald', sans-serif;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .logo .dot{
+    width:8px; height:8px;
+    background:var(--accent);
+    border-radius:50%;
+    box-shadow:0 0 8px 1px var(--accent);
+    animation:pulse-dot 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-dot{
+    0%,100%{opacity:1;}
+    50%{opacity:0.35;}
+  }
+
+  nav.primary{
+    display:flex;
+    gap:2px;
+  }
+  nav.primary a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    color:var(--text-muted);
+    padding:10px 14px;
+    border:1px solid transparent;
+    transition:color .2s ease, border-color .2s ease, background .2s ease;
+    position:relative;
+  }
+  nav.primary a::before{
+    content:"◦";
+    color:var(--accent);
+    margin-right:6px;
+    opacity:0;
+    transition:opacity .2s ease;
+  }
+  nav.primary a:hover{
+    color:var(--text);
+    border-color:var(--line);
+    background:var(--bg-panel);
+  }
+  nav.primary a:hover::before{opacity:1;}
+
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:11px 20px;
+    border:1px solid var(--accent);
+    color:var(--bg);
+    background:var(--accent);
+    cursor:pointer;
+    transition:all .2s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:transparent; color:var(--accent);}
+  .btn.ghost{
+    background:transparent;
+    color:var(--text);
+    border-color:var(--line);
+  }
+  .btn.ghost:hover{border-color:var(--accent); color:var(--accent);}
+  .btn.small{padding:8px 14px; font-size:10.5px;}
+
+  .burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+  }
+  .burger span{width:22px; height:2px; background:var(--text);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 80px;
+    border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.16em;
+    color:var(--accent);
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--accent);
+  }
+  .hero h1{
+    font-size:clamp(42px, 6vw, 74px);
+    line-height:0.98;
+    letter-spacing:0.01em;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--accent);
+  }
+  .hero p.lead{
+    font-size:16.5px;
+    line-height:1.7;
+    color:var(--text-muted);
+    max-width:480px;
+    margin:26px 0 34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+
+  .trust-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    margin-top:34px;
+    padding-top:24px;
+    border-top:1px solid var(--line-soft);
+  }
+  .trust-bar span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .trust-bar span::before{
+    content:"";
+    width:5px; height:5px;
+    background:var(--accent);
+    border-radius:50%;
+    flex-shrink:0;
+  }
+
+  .scope-box{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    position:relative;
+    padding:0;
+  }
+  .scope-box .scope-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:0.1em;
+    color:var(--text-dim);
+    text-transform:uppercase;
+  }
+  .scope-head .led{
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--accent-2);
+    box-shadow:0 0 6px var(--accent-2);
+  }
+  canvas#scope{
+    width:100%;
+    height:220px;
+    display:block;
+  }
+  .scope-foot{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--text-dim);
+    letter-spacing:0.08em;
+    border-top:1px solid var(--line);
+    text-transform:uppercase;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:90px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:20px;
+    margin-bottom:46px;
+    border-bottom:1px solid var(--line-soft);
+    padding-bottom:22px;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);}
+  .section-head .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    color:var(--accent);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---------- Signal chain ---------- */
+  .chain{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border:1px solid var(--line);
+  }
+  .chain-step{
+    padding:36px 30px;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .chain-step:last-child{border-right:none;}
+  .chain-step .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--accent);
+    font-size:12px;
+    letter-spacing:0.1em;
+  }
+  .chain-step h3{
+    font-size:20px;
+    margin:16px 0 12px;
+  }
+  .chain-step p{
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.65;
+    margin:0;
+  }
+  .chain-step::after{
+    content:"→";
+    position:absolute;
+    right:-14px;
+    top:36px;
+    color:var(--accent);
+    font-size:18px;
+    z-index:2;
+    background:var(--bg);
+  }
+  .chain-step:last-child::after{display:none;}
+
+  /* ---------- Category grid ---------- */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .cat-card{
+    background:var(--bg-panel);
+    position:relative;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    display:block;
+  }
+  .cat-card .art-tile{
+    width:100%; height:100%;
+  }
+  .cat-card:hover .art-tile{
+    transform:scale(1.06);
+  }
+  .cat-card .cat-inner{
+    position:absolute; inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:20px;
+    background:linear-gradient(180deg, transparent 40%, rgba(11,13,14,0.92) 100%);
+  }
+  .cat-card .cat-index{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--accent);
+    letter-spacing:0.1em;
+    margin-bottom:8px;
+  }
+  .cat-card h3{font-size:17px; line-height:1.15;}
+  .cat-card .arrow{
+    margin-top:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--text-muted);
+    display:flex; align-items:center; gap:6px;
+    transition:gap .2s ease, color .2s ease;
+  }
+  .cat-card:hover .arrow{gap:10px; color:var(--accent);}
+
+  /* ---------- Product grid ---------- */
+  .prod-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+  }
+  .prod-card{
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    transition:border-color .2s ease, transform .2s ease;
+    position:relative;
+  }
+  .prod-card:hover{
+    border-color:var(--accent-dim);
+    transform:translateY(-3px);
+  }
+  .prod-card .screw{
+    position:absolute;
+    width:4px; height:4px;
+    border-radius:50%;
+    background:var(--line);
+  }
+  .prod-card .screw.tl{top:7px; left:7px;}
+  .prod-card .screw.tr{top:7px; right:7px;}
+  .prod-thumb{
+    aspect-ratio:1/1;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .prod-card:hover .art-tile{transform:scale(1.05);}
+
+  /* ---------- Generative art tile (replaces product photography) ---------- */
+  .art-tile{
+    width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    position:relative;
+    background:
+      radial-gradient(circle at 25% 22%, rgba(232,163,61,0.24), transparent 55%),
+      repeating-linear-gradient(118deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 15px),
+      linear-gradient(160deg, var(--bg-raised), var(--bg-panel));
+    filter:hue-rotate(var(--hue, 0deg));
+    transition:transform .5s ease;
+  }
+  .art-tile::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:24px 24px;
+    opacity:0.35;
+  }
+  .art-tile svg{
+    width:34%; height:34%;
+    max-width:70px;
+    color:var(--accent);
+    opacity:0.55;
+    position:relative;
+    z-index:1;
+  }
+  .badge{
+    position:absolute;
+    top:10px; left:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:4px 8px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    color:var(--text-muted);
+  }
+  .badge.free{color:var(--accent); border-color:var(--accent-dim);}
+  .badge.sale{color:#fff; background:var(--accent-2); border-color:var(--accent-2);}
+  .badge.new{color:var(--bg); background:var(--text); border-color:var(--text);}
+  .prod-body{
+    padding:16px 16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    flex:1;
+  }
+  .prod-cat{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--text-dim);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .prod-body h3{
+    font-size:14.5px;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0;
+    line-height:1.3;
+    font-family:'Inter', sans-serif;
+  }
+  .prod-foot{
+    margin-top:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:8px;
+    border-top:1px solid var(--line-soft);
+  }
+  .price{font-family:'IBM Plex Mono', monospace; font-size:13px;}
+  .price .old{color:var(--text-dim); text-decoration:line-through; margin-right:6px; font-size:11.5px;}
+  .price .now{color:var(--accent);}
+  .prod-foot .go{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--text-muted);
+    letter-spacing:0.05em;
+  }
+
+  .center-cta{text-align:center; margin-top:44px;}
+
+  .filter-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:34px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--text-muted);
+    padding:9px 16px;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .filter-btn:hover{border-color:var(--accent-dim); color:var(--text);}
+  .filter-btn.active{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--bg);
+  }
+  .prod-card[hidden]{display:none;}
+  .shop-note{
+    margin-top:26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-dim);
+    letter-spacing:0.03em;
+  }
+
+  /* ---------- Why section ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .why-list{list-style:none; margin:0; padding:0;}
+  .why-list li{
+    display:flex;
+    gap:18px;
+    padding:22px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .why-list li:first-child{padding-top:0;}
+  .why-list .mark{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--accent);
+    font-size:13px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .why-list h3{
+    font-size:15.5px;
+    text-transform:none;
+    letter-spacing:0;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .why-list p{
+    margin:0;
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.6;
+  }
+  .why-visual{
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    padding:34px;
+    position:sticky;
+    top:100px;
+  }
+  .why-visual .rowline{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+  }
+  .why-visual .rowline:last-child{border-bottom:none;}
+  .why-visual .rowline span:last-child{color:var(--accent);}
+
+  /* ---------- Newsletter / social band ---------- */
+  .band{
+    background:var(--bg-panel);
+    border-top:1px solid var(--line-soft);
+    border-bottom:1px solid var(--line-soft);
+    padding:70px 0;
+  }
+  .band-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .band h2{font-size:clamp(24px,3vw,32px); max-width:480px;}
+  .band p{color:var(--text-muted); margin-top:10px; max-width:440px; font-size:14.5px; line-height:1.6;}
+  .ig-follow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    border:1px solid var(--line);
+    padding:14px 20px;
+    background:var(--bg);
+  }
+  .ig-follow svg{flex-shrink:0;}
+  .ig-follow .handle{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted);}
+  .ig-follow strong{display:block; font-size:14px;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+  }
+  .contact-info h2{font-size:clamp(26px,3.4vw,36px); margin-bottom:18px;}
+  .contact-info p{color:var(--text-muted); line-height:1.7; font-size:15px; max-width:400px;}
+  .info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:14px 0;
+    border-top:1px solid var(--line-soft);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+  }
+  .info-row:last-child{border-bottom:1px solid var(--line-soft);}
+  .info-row span:first-child{color:var(--text-dim);}
+
+  form.contact-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  form.contact-form .full{grid-column:1/-1;}
+  .field label{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .field input, .field textarea{
+    width:100%;
+    background:var(--bg-panel);
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:13px 14px;
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+  }
+  form.contact-form button{
+    justify-self:start;
+    margin-top:4px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:50px 0 30px;
+    border-top:1px solid var(--line-soft);
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:30px;
+    padding-bottom:34px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .footer-cols{display:flex; gap:60px; flex-wrap:wrap;}
+  .footer-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .footer-col a{
+    display:block;
+    color:var(--text-muted);
+    font-size:13.5px;
+    margin-bottom:10px;
+    transition:color .2s ease;
+  }
+  .footer-col a:hover{color:var(--accent);}
+  .socials{display:flex; gap:12px;}
+  .socials a{
+    width:36px; height:36px;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s ease, color .2s ease;
+    color:var(--text-muted);
+  }
+  .socials a:hover{border-color:var(--accent); color:var(--accent);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    padding-top:26px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:0.05em;
+  }
+  .pay-icons{display:flex; gap:10px; align-items:center; color:var(--text-dim); font-size:11px;}
+
+  /* ---------- Toast ---------- */
+  .toast{
+    position:fixed;
+    bottom:26px; right:26px;
+    background:var(--bg-panel);
+    border:1px solid var(--accent);
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transform:translateY(140%);
+    transition:transform .35s ease;
+    z-index:999;
+    max-width:320px;
+  }
+  .toast.show{transform:translateY(0);}
+  .toast .led-ok{width:8px;height:8px;border-radius:50%;background:var(--accent); box-shadow:0 0 6px var(--accent); flex-shrink:0;}
+  .toast p{margin:0; font-size:13px; line-height:1.5;}
+  .toast strong{display:block; font-size:12.5px; margin-bottom:2px; font-family:'IBM Plex Mono', monospace; letter-spacing:0.05em;}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    nav.primary, .header-actions .btn.ghost{display:none;}
+    .burger{display:flex;}
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .chain{grid-template-columns:1fr;}
+    .chain-step{border-right:none; border-bottom:1px solid var(--line);}
+    .chain-step:last-child{border-bottom:none;}
+    .chain-step::after{display:none;}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .prod-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:1fr;}
+    .why-visual{position:static;}
+    .contact-grid{grid-template-columns:1fr;}
+    form.contact-form{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .cat-grid{grid-template-columns:1fr;}
+    .prod-grid{grid-template-columns:1fr;}
+    .hero{padding:64px 0 56px;}
+    section{padding:60px 0;}
+    .band-inner{flex-direction:column; align-items:flex-start;}
+  }
+
+  /* Mobile nav drawer */
+  .mobile-nav{
+    position:fixed; inset:0;
+    background:var(--bg);
+    z-index:200;
+    display:flex;
+    flex-direction:column;
+    padding:26px 28px;
+    transform:translateX(100%);
+    transition:transform .3s ease;
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:50px;}
+  .mobile-nav a{
+    font-family:'Oswald', sans-serif;
+    font-size:28px;
+    text-transform:uppercase;
+    padding:16px 0;
+    border-bottom:1px solid var(--line-soft);
+    color:var(--text);
+  }
+  .mobile-nav .btn{margin-top:30px; text-align:center; justify-content:center;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-analoglab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <circle cx="12" cy="12" r="8"/>
+      <line x1="12" y1="12" x2="12" y2="6"/>
+      <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-soundkits" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="3" y="3" width="7.5" height="7.5" rx="1"/>
+      <rect x="13.5" y="3" width="7.5" height="7.5" rx="1"/>
+      <rect x="3" y="13.5" width="7.5" height="7.5" rx="1"/>
+      <rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1"/>
+    </symbol>
+    <symbol id="icon-presets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <line x1="6" y1="4" x2="6" y2="20"/>
+      <circle cx="6" cy="9" r="1.6" fill="currentColor" stroke="none"/>
+      <line x1="12" y1="4" x2="12" y2="20"/>
+      <circle cx="12" cy="15" r="1.6" fill="currentColor" stroke="none"/>
+      <line x1="18" y1="4" x2="18" y2="20"/>
+      <circle cx="18" cy="7" r="1.6" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="icon-samples" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <line x1="3" y1="12" x2="3" y2="12" stroke-width="2"/>
+      <line x1="6" y1="8" x2="6" y2="16" stroke-width="2"/>
+      <line x1="9" y1="4" x2="9" y2="20" stroke-width="2"/>
+      <line x1="12" y1="9" x2="12" y2="15" stroke-width="2"/>
+      <line x1="15" y1="2" x2="15" y2="22" stroke-width="2"/>
+      <line x1="18" y1="7" x2="18" y2="17" stroke-width="2"/>
+      <line x1="21" y1="11" x2="21" y2="13" stroke-width="2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>20% OFF WITH CODE "RETONES25"</span>
+    <span>NEW SOUND PACKS EVERY WEEK</span>
+    <span>FREE DOWNLOADS AVAILABLE</span>
+    <span>20% OFF WITH CODE "RETONES25"</span>
+    <span>NEW SOUND PACKS EVERY WEEK</span>
+    <span>FREE DOWNLOADS AVAILABLE</span>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="wrap nav-row">
+    <a href="#top" class="logo"><span class="dot"></span>reTones</a>
+    <nav class="primary">
+      <a href="#releases" data-filter="all">All</a>
+      <a href="#releases" data-filter="soundkits">Sound Kits</a>
+      <a href="#releases" data-filter="presets">Presets</a>
+      <a href="#releases" data-filter="samples">Samples</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="https://payhip.com/reTones/users/login" class="btn ghost small">Login</a>
+      <a href="#releases" class="btn small" data-filter="all">Shop Now</a>
+      <button class="burger" id="burgerBtn" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <span class="logo"><span class="dot"></span>reTones</span>
+    <button class="burger" id="closeBurger" aria-label="Menü schließen">✕</button>
+  </div>
+  <a href="#releases" data-filter="all">All</a>
+  <a href="#releases" data-filter="soundkits">Sound Kits</a>
+  <a href="#releases" data-filter="presets">Presets</a>
+  <a href="#releases" data-filter="samples">Samples</a>
+  <a href="#contact">Contact</a>
+  <a href="#releases" class="btn" data-filter="all">Shop Now</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Sound Design Label · Instant Digital Download</span>
+        <h1>Sound that cuts<br>through the <em>mix.</em></h1>
+        <p class="lead">reTones makes preset banks, sound kits, and sample packs for producers working in dark, textured, and off-kilter styles. Every pack is a straight digital download — you own the files, no subscription, no plugin lock-in.</p>
+        <div class="hero-ctas">
+          <a href="#releases" class="btn" data-filter="all">Shop All Sounds</a>
+          <a href="#releases" class="btn ghost" data-filter="free">Get Free Packs →</a>
+        </div>
+        <div class="trust-bar">
+          <span>Instant Download</span>
+          <span>Secure Checkout</span>
+          <span>Free Packs Available</span>
+          <span>Works With Any DAW</span>
+        </div>
+      </div>
+      <div class="scope-box reveal">
+        <div class="scope-head">
+          <span>Signal Monitor · CH 01–02</span>
+          <span class="led"></span>
+        </div>
+        <canvas id="scope"></canvas>
+        <div class="scope-foot">
+          <span>Level −6dB</span>
+          <span>Texture: Dark / Experimental</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNAL CHAIN -->
+  <section>
+    <div class="wrap">
+      <span class="kicker reveal">Our Process</span>
+      <div class="section-head reveal">
+        <h2>How every pack<br>gets made</h2>
+        <span class="tag">01 → 03</span>
+      </div>
+      <div class="chain reveal">
+        <div class="chain-step">
+          <span class="num">01 / SOURCE</span>
+          <h3>Real gear, not just plugins</h3>
+          <p>Every sound starts on actual synths, pedals, and field recordings — not a preset built from someone else's preset.</p>
+        </div>
+        <div class="chain-step">
+          <span class="num">02 / DESIGN</span>
+          <h3>Layered and shaped by hand</h3>
+          <p>Raw takes get processed, layered, and reworked in the studio until the sound has its own identity, not a generic one.</p>
+        </div>
+        <div class="chain-step">
+          <span class="num">03 / RELEASE</span>
+          <h3>Tested in real tracks first</h3>
+          <p>Nothing ships until it's been used in an actual session. If it doesn't hold up outside the demo, it doesn't go in the store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section>
+    <div class="wrap">
+      <span class="kicker reveal">Shop By Type</span>
+      <div class="section-head reveal">
+        <h2>What we make</h2>
+        <span class="tag">3 Categories</span>
+      </div>
+      <div class="cat-grid reveal">
+        <a class="cat-card" href="#releases" data-filter="soundkits">
+          <div class="art-tile" style="--hue:-18deg;"><svg><use href="#icon-soundkits"/></svg></div>
+          <div class="cat-inner">
+            <span class="cat-index">CAT.01</span>
+            <h3>Sound Kits</h3>
+            <span class="arrow">Shop Sound Kits →</span>
+          </div>
+        </a>
+        <a class="cat-card" href="#releases" data-filter="presets">
+          <div class="art-tile" style="--hue:0deg;"><svg><use href="#icon-analoglab"/></svg></div>
+          <div class="cat-inner">
+            <span class="cat-index">CAT.02</span>
+            <h3>Presets</h3>
+            <span class="arrow">Shop Presets →</span>
+          </div>
+        </a>
+        <a class="cat-card" href="#releases" data-filter="samples">
+          <div class="art-tile" style="--hue:-40deg;"><svg><use href="#icon-samples"/></svg></div>
+          <div class="cat-inner">
+            <span class="cat-index">CAT.03</span>
+            <h3>Samples</h3>
+            <span class="arrow">Shop Samples →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELEASES -->
+  <section id="releases">
+    <div class="wrap">
+      <span class="kicker reveal">Shop</span>
+      <div class="section-head reveal">
+        <h2>Latest Releases</h2>
+        <span class="tag" id="prodCount">8 Products</span>
+      </div>
+
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="soundkits">Sound Kits</button>
+        <button class="filter-btn" data-filter="presets">Presets</button>
+        <button class="filter-btn" data-filter="samples">Samples</button>
+        <button class="filter-btn" data-filter="free">Free</button>
+      </div>
+
+      <div class="prod-grid reveal" id="prodGrid">
+
+        <div class="prod-card" data-category="presets" data-free="0">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge new">New</span>
+            <div class="art-tile" style="--hue:0deg;"><svg><use href="#icon-analoglab"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Preset Bank · 32 Sounds · Digital Download</span>
+            <h3>Obsidian</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">€5.00</span></span>
+              <a href="https://retones.de/b/J0RVs" class="btn small payhip-buy-button" data-theme="none" data-product="J0RVs">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="presets" data-free="1">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge free">Free</span>
+            <div class="art-tile" style="--hue:12deg;"><svg><use href="#icon-analoglab"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Preset Bank · 30 Sounds · Digital Download</span>
+            <h3>Ground Signals</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">Free</span></span>
+              <a href="https://retones.de/b/kr6Bb" class="btn small payhip-buy-button" data-theme="none" data-product="kr6Bb">Free Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="presets" data-free="1">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge free">Free</span>
+            <div class="art-tile" style="--hue:-14deg;"><svg><use href="#icon-analoglab"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Preset Bank · 30 Sounds · Digital Download</span>
+            <h3>Synth Zone</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">Free</span></span>
+              <a href="https://retones.de/b/P59lj" class="btn small payhip-buy-button" data-theme="none" data-product="P59lj">Free Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="soundkits" data-free="1">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge free">Free</span>
+            <div class="art-tile" style="--hue:-18deg;"><svg><use href="#icon-soundkits"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Sound Kit · One-Shots · Digital Download</span>
+            <h3>Signals</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">Free</span></span>
+              <a href="https://retones.de/b/signals-free-oneshot-kit" class="btn small payhip-buy-button" data-theme="none" data-product="signals-free-oneshot-kit">Free Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="samples" data-free="1">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge free">Free</span>
+            <div class="art-tile" style="--hue:-40deg;"><svg><use href="#icon-samples"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Sample Pack · 15 Sounds · Digital Download</span>
+            <h3>Synthronic</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">Free</span></span>
+              <a href="https://retones.de/b/synthronicfree-sample-library" class="btn small payhip-buy-button" data-theme="none" data-product="synthronicfree-sample-library">Free Download</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="soundkits" data-free="0">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge sale">On Sale</span>
+            <div class="art-tile" style="--hue:-24deg;"><svg><use href="#icon-soundkits"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Sound Kit · Producer Suite · Digital Download</span>
+            <h3>Rebloom Producer Suite</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="old">€20.00</span><span class="now">€15.00</span></span>
+              <a href="https://retones.de/b/rebloom-soundkit-library" class="btn small payhip-buy-button" data-theme="none" data-product="rebloom-soundkit-library">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="presets" data-free="0">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <div class="art-tile" style="--hue:22deg;"><svg><use href="#icon-presets"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Preset Bank · 30 Sounds · Digital Download</span>
+            <h3>Timeless</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">€5.00</span></span>
+              <a href="https://retones.de/b/timeless-preset-bank-for-grid" class="btn small payhip-buy-button" data-theme="none" data-product="timeless-preset-bank-for-grid">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card" data-category="soundkits" data-free="1">
+          <span class="screw tl"></span><span class="screw tr"></span>
+          <div class="prod-thumb">
+            <span class="badge free">Free</span>
+            <div class="art-tile" style="--hue:-8deg;"><svg><use href="#icon-soundkits"/></svg></div>
+          </div>
+          <div class="prod-body">
+            <span class="prod-cat">Sound Kit · Demo · Digital Download</span>
+            <h3>Rebloom Producer Suite [Demo]</h3>
+            <div class="prod-foot">
+              <span class="price"><span class="now">Free</span></span>
+              <a href="https://retones.de/b/rebloom-demo-soundkit" class="btn small payhip-buy-button" data-theme="none" data-product="rebloom-demo-soundkit">Free Download</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="shop-note reveal">Buy buttons open secure checkout right here — you won't leave this page.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section>
+    <div class="wrap why-grid">
+      <div class="reveal">
+        <span class="kicker">Why reTones</span>
+        <h2 style="font-size:clamp(26px,3.4vw,36px); margin-bottom:30px;">Made for producers, not for browsing</h2>
+        <ul class="why-list">
+          <li>
+            <span class="mark">■</span>
+            <div>
+              <h3>Ready the second you download it</h3>
+              <p>Files are named and organized properly — drag them into your project and go, no cleanup required.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">■</span>
+            <div>
+              <h3>Not another stock pack</h3>
+              <p>Every bank is designed in-house from scratch on real synths and pedals — not repackaged from someone else's library.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">■</span>
+            <div>
+              <h3>Try it before you pay for it</h3>
+              <p>Several full packs are free downloads, so you can hear what reTones sounds like before spending anything.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">■</span>
+            <div>
+              <h3>One purchase, yours for good</h3>
+              <p>No subscription, no rented sound library. Buy it once and the files are yours.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-visual reveal">
+        <div class="rowline"><span>Delivery</span><span>Instant Download</span></div>
+        <div class="rowline"><span>Genre Focus</span><span>Dark / Experimental</span></div>
+        <div class="rowline"><span>File Format</span><span>Digital Download</span></div>
+        <div class="rowline"><span>Discount Code</span><span>RETONES25</span></div>
+        <div class="rowline"><span>Support</span><span>Direct via Form</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM BAND -->
+  <section class="band">
+    <div class="wrap band-inner">
+      <div class="reveal">
+        <h2>Don't miss the next release.</h2>
+        <p>New preset banks, sound kits, and free drops go up on Instagram and TikTok first — no spam, just sounds.</p>
+      </div>
+      <a class="ig-follow reveal" href="https://www.instagram.com/retones_original" target="_blank" rel="noopener">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        <span>
+          <strong>@retones_original</strong>
+          <span class="handle">Follow →</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal">
+        <span class="kicker">Contact</span>
+        <h2>Questions about a<br>license or a product?</h2>
+        <p>Send us a message through the form — we typically reply within 1–2 business days.</p>
+        <div class="info-row"><span>Response Time</span><span>1–2 Business Days</span></div>
+        <div class="info-row"><span>License Questions</span><span>Via Form</span></div>
+        <div class="info-row"><span>Instagram</span><span>@retones_original</span></div>
+        <div class="info-row"><span>TikTok</span><span>@retones</span></div>
+      </div>
+      <form class="contact-form reveal" id="contactForm">
+        <div class="field">
+          <label for="fname">First Name</label>
+          <input id="fname" type="text" required>
+        </div>
+        <div class="field">
+          <label for="lname">Last Name</label>
+          <input id="lname" type="text" required>
+        </div>
+        <div class="field full">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" required>
+        </div>
+        <div class="field full">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn">Send</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <span class="logo"><span class="dot"></span>reTones</span>
+        <p style="color:var(--text-muted); font-size:13.5px; max-width:280px; margin-top:14px; line-height:1.6;">Preset banks, sound kits, and samples for dark, textured production.</p>
+        <div class="socials" style="margin-top:20px;">
+          <a href="https://www.instagram.com/retones_original" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="https://tiktok.com/@retones" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.5 2.4 2 4 4.4 4.2v3.3c-1.5.1-2.9-.4-4.4-1.3v6.6c0 4-3.2 6.6-6.7 6.2-3-.3-5.3-2.9-5.3-6 0-3.4 2.9-6.2 6.4-6 .3 0 .6 0 .9.1v3.4a3 3 0 0 0-.9-.1 2.7 2.7 0 1 0 2.7 2.7V3h2.9z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#releases" data-filter="all">All Products</a>
+          <a href="#releases" data-filter="soundkits">Sound Kits</a>
+          <a href="#releases" data-filter="presets">Presets</a>
+          <a href="#releases" data-filter="samples">Samples</a>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <a href="https://payhip.com/reTones/users/login">Login</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Social</h4>
+          <a href="https://www.instagram.com/retones_original" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://tiktok.com/@retones" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> reTones. All rights reserved.</span>
+      <span class="pay-icons">Maestro · Mastercard · PayPal · Visa · Discover</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">
+  <span class="led-ok"></span>
+  <p><strong>Message sent</strong>Thanks — we'll get back to you as soon as we can.</p>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header shrink on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('shrink', window.scrollY > 40);
+  });
+
+  // Mobile nav
+  const mobileNav = document.getElementById('mobileNav');
+  document.getElementById('burgerBtn').addEventListener('click', () => mobileNav.classList.add('open'));
+  document.getElementById('closeBurger').addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Shop filtering — every nav link, category card and hero CTA with data-filter
+  // scrolls to the shop and filters it, all without leaving the page.
+  const prodGrid = document.getElementById('prodGrid');
+  const prodCards = prodGrid ? Array.from(prodGrid.querySelectorAll('.prod-card')) : [];
+  const prodCount = document.getElementById('prodCount');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  function applyFilter(filter){
+    let visible = 0;
+    prodCards.forEach(card => {
+      const cat = card.dataset.category;
+      const isFree = card.dataset.free === '1';
+      const match = filter === 'all' || cat === filter || (filter === 'free' && isFree);
+      card.hidden = !match;
+      if(match) visible++;
+    });
+    if(prodCount) prodCount.textContent = visible + (visible === 1 ? ' Product' : ' Products');
+    filterBtns.forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
+  }
+
+  filterBtns.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+
+  document.querySelectorAll('a[data-filter]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const filter = link.dataset.filter;
+      if(document.getElementById('releases')){
+        applyFilter(filter);
+      }
+    });
+  });
+
+  // Contact form fake-submit
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    this.reset();
+    setTimeout(() => toast.classList.remove('show'), 4200);
+  });
+
+  // Oscilloscope canvas
+  const canvas = document.getElementById('scope');
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resizeCanvas(){
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * devicePixelRatio;
+    canvas.height = rect.height * devicePixelRatio;
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  let t = 0;
+  function drawScope(){
+    const w = canvas.getBoundingClientRect().width;
+    const h = canvas.getBoundingClientRect().height;
+    ctx.clearRect(0,0,w,h);
+
+    // grid
+    ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+    ctx.lineWidth = 1;
+    for(let x=0; x<w; x+=w/12){
+      ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke();
+    }
+    for(let y=0; y<h; y+=h/6){
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke();
+    }
+
+    // waveform 1 (amber)
+    ctx.beginPath();
+    ctx.strokeStyle = '#e8a33d';
+    ctx.lineWidth = 1.6;
+    for(let x=0; x<=w; x++){
+      const p = x/w;
+      const y = h/2 + Math.sin(p*14 + t) * (h*0.16) * Math.sin(p*3 + t*0.4) + Math.sin(p*40+t*2)*3;
+      x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+
+    // waveform 2 (dim red, offset)
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(212,72,59,0.55)';
+    ctx.lineWidth = 1.2;
+    for(let x=0; x<=w; x++){
+      const p = x/w;
+      const y = h/2 + Math.sin(p*9 - t*0.8) * (h*0.11);
+      x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+
+    t += reduceMotion ? 0 : 0.028;
+    requestAnimationFrame(drawScope);
+  }
+  drawScope();
+</script>
+
+</body>
+</html>
